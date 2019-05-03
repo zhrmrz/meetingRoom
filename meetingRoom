@@ -1,0 +1,22 @@
+class Sol:
+    def meetingRoom(self,lol):
+        lol.sort()
+        # create list of first element in each list of lol
+        lof = []
+        for i in lol:
+            lof.append(i[0])
+
+        # create list of 2nd element in each list of lol
+        los = []
+        for i in lol:
+            los.append(i[1])
+
+        for i in range(1, len(lol)):
+            if lof[i] < los[i - 1]:
+                return False
+        return True
+
+
+if __name__ == '__main__':
+    p1=Sol()
+    print(p1.meetingRoom([[1,22],[2.5,5],[5,6]]))
